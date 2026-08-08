@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Service | VanCycle Mobile Bicycle Shop</title>
+    <link rel="stylesheet" href="vancycle.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <h1><a href="VCHome.html"><img src="./VC Website Images/Van Cycle.jpg" alt="VanCycle logo"></a></h1>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label"><span></span><strong>Menu</strong></label>
+        <ul class="nav-links">
+            <li><a href="VCHome.html">Home</a></li>
+            <li><a href="VCServices.html">Services</a></li>
+            <li><a href="VCAbout.html">About</a></li>
+            <li><a href="VCFAQ.html">FAQ</a></li>
+            <li><a href="VCContact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero service-hero">
+    <div class="hero-content">
+        <p class="eyebrow">Book a service</p>
+        <h2>Request a bike service</h2>
+        <p>Tell us what your bike needs and we’ll get back to you with a quick reply, appointment time, or next steps.</p>
+        <div class="hero-actions">
+            <a class="button" href="#service-request">Request Service</a>
+            <a class="button secondary-button" href="tel:7788813278">Call Now</a>
+        </div>
+    </div>
+</section>
+
+<section class="contact-panel" id="service-request">
+    <div class="contact-layout">
+        <div class="contact-info">
+            <h2>Tell us about your bike</h2>
+            <p>Whether it’s a tune-up, repair, or mobile maintenance visit, we’ll help you get your ride back in shape.</p>
+            <div class="hours-box">
+                <span class="hours-label">Hours</span>
+                <strong>Mon–Sat: 7am–9pm</strong>
+                <span class="hours-closed">Closed Sundays</span>
+            </div>
+            <p>Phone: <strong><a class="phone-link" href="tel:7788813278">778-881-FAST (3278)</a></strong></p>
+            <p>Email: <strong>info@vancycle.ca</strong></p>
+            <ul>
+                <li>Mobile bike service across Vancouver</li>
+                <li>Quick follow-up for service requests</li>
+                <li>Convenient booking for commuters and families</li>
+            </ul>
+        </div>
+
+        <div class="form-card service-form-card">
+            <h3>Service Request Form</h3>
+            <form class="comment-form service-form" action="mailto:info@vancycle.ca" method="post" enctype="text/plain">
+                <div class="form-row">
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div>
+                        <label for="service-type">Service Needed</label>
+                        <select id="service-type" name="service-type" required>
+                            <option value="">Select a service</option>
+                            <option value="Tune-Up">Tune-Up</option>
+                            <option value="Repair">Repair</option>
+                            <option value="Brake Service">Brake Service</option>
+                            <option value="Flat Tire">Flat Tire</option>
+                            <option value="General Maintenance">General Maintenance</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="full-width">
+                    <label for="location">Location / Neighbourhood</label>
+                    <input type="text" id="location" name="location" placeholder="Your area in Vancouver">
+                </div>
+
+                <div class="full-width">
+                    <label for="message">Tell us what you need</label>
+                    <textarea id="message" name="message" placeholder="Describe the issue, bike model, and any details you want us to know..." required></textarea>
+                </div>
+
+                <button type="submit" class="button">Request Service</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="services">
+    <h2>Service Areas</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Downtown Vancouver</h3>
+            <p>Fast response times for commuters, residents, and businesses.</p>
+        </div>
+        <div class="card">
+            <h3>East &amp; West Side</h3>
+            <p>Full mobile service in Kitsilano, Mount Pleasant, Gastown, and more.</p>
+        </div>
+        <div class="card">
+            <h3>North Shore</h3>
+            <p>We also serve riders in North Vancouver and surrounding communities.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Location: Vancouver</p>
+    <p>Contact us by phone: <strong><a class="phone-link" href="tel:7788813278">778-881-FAST (3278)</a></strong> or use the service request form above.</p>
+    <p>We will respond to your request as soon as possible!</p>
+    <p>© VanCycle Mobile Bicycle Shop</p>
+</footer>
+
+</body>
+</html>
