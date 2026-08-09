@@ -23,27 +23,22 @@
     </nav>
 </header>
 
-<section class="hero service-hero">
-    <div class="hero-content">
-        <p class="eyebrow">Book a service</p>
-        <h2>Request a bike service</h2>
-        <p>Tell us what your bike needs and we’ll get back to you with a quick reply, appointment time, or next steps.</p>
-        <div class="hero-actions">
-            <a class="button" href="#service-request">Request Service</a>
-            <a class="button secondary-button" href="tel:7788813278">Call Now</a>
-        </div>
-    </div>
-</section>
-
 <section class="contact-panel" id="service-request">
     <div class="contact-layout">
         <div class="contact-info">
             <h2>Tell us about your bike</h2>
             <p>Whether it’s a tune-up, repair, or mobile maintenance visit, we’ll help you get your ride back in shape.</p>
-            <div class="hours-box">
-                <span class="hours-label">Hours</span>
-                <strong>Mon–Sat: 7am–9pm</strong>
-                <span class="hours-closed">Closed Sundays</span>
+            <p class="request-invite">Send us your bike service request any time — if we’re closed right now, we’ll review it on the next open business day and follow up as soon as we’re back.</p>
+            <div class="hours-layout">
+                <div class="hours-box" id="hours-box">
+                    <span class="hours-label">Hours</span>
+                    <strong>Mon–Sat: 7am–9pm</strong>
+                    <span class="hours-closed">Closed Sundays</span>
+                </div>
+                <div class="store-status status-open" id="contact-store-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Currently Open</span>
+                </div>
             </div>
             <p>Phone: <strong><a class="phone-link" href="tel:7788813278">778-881-FAST (3278)</a></strong></p>
             <p>Email: <strong>info@vancycle.ca</strong></p>
@@ -127,6 +122,28 @@
     <p>We will respond to your request as soon as possible!</p>
     <p>© VanCycle Mobile Bicycle Shop</p>
 </footer>
+
+<script>
+    (function () {
+        const now = new Date();
+        const day = now.getDay();
+        const hour = now.getHours();
+
+        const isStoreOpen = day >= 1 && day <= 6 && hour >= 7 && hour < 21;
+        const hoursBox = document.getElementById('hours-box');
+        const contactStoreStatus = document.getElementById('contact-store-status');
+
+        if (hoursBox && !isStoreOpen) {
+            hoursBox.classList.add('is-out-of-hours');
+        }
+
+        if (contactStoreStatus) {
+            contactStoreStatus.classList.toggle('status-open', isStoreOpen);
+            contactStoreStatus.classList.toggle('status-closed', !isStoreOpen);
+            contactStoreStatus.querySelector('.status-text').textContent = isStoreOpen ? 'Currently Open' : 'Currently Closed';
+        }
+    })();
+</script>
 
 </body>
 </html>

@@ -11,7 +11,7 @@
 
 <header>
     <nav>
-        <h1><a href="index.html">Home</a><img src="./VC Website Images/Van Cycle.png" alt="VanCycle logo"></a></h1>
+        <h1><img src="./VC Website Images/Van Cycle.png" alt="VanCycle logo"></h1>
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label"><span></span><strong>Menu</strong></label>
         <ul class="nav-links">
@@ -20,7 +20,6 @@
             <li><a href="VCAbout.html">About</a></li>
             <li><a href="VCFAQ.html">FAQ</a></li>
             <li><a href="VCContact.html">Contact</a></li>
-            <li><a href="VCComment.html">Comment</a></li>
         </ul>
     </nav>
 </header>
@@ -35,8 +34,15 @@
         </p>
 
         <div class="hero-hours">
-            <strong>Open Mon–Sat: 7am–9pm</strong>
-            <span>Closed Sundays</span>
+            <div class="hours-box hero-hours-box">
+                <span class="hours-label">Hours</span>
+                <strong>Mon–Sat: 7am–9pm</strong>
+                <span class="hours-closed">Closed Sundays</span>
+            </div>
+            <div class="store-status status-open" id="home-store-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Currently Open</span>
+            </div>
         </div>
 
         <a class="button" href="VCComment.html">Book a Repair</a>
@@ -132,6 +138,27 @@
     <p>© VanCycle Mobile Bicycle Shop</p>
 </footer>
 
+<script>
+    (function () {
+        const now = new Date();
+        const day = now.getDay();
+        const hour = now.getHours();
+
+        const isStoreOpen = day >= 1 && day <= 6 && hour >= 7 && hour < 21;
+        const homeHoursBox = document.querySelector('.hero-hours');
+        const homeStoreStatus = document.getElementById('home-store-status');
+
+        if (homeHoursBox && !isStoreOpen) {
+            homeHoursBox.classList.add('is-out-of-hours');
+        }
+
+        if (homeStoreStatus) {
+            homeStoreStatus.classList.toggle('status-open', isStoreOpen);
+            homeStoreStatus.classList.toggle('status-closed', !isStoreOpen);
+            homeStoreStatus.querySelector('.status-text').textContent = isStoreOpen ? 'Currently Open' : 'Currently Closed';
+        }
+    })();
+</script>
 
 </body>
 </html>

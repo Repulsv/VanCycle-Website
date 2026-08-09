@@ -226,11 +226,18 @@ nav a:hover {
 }
 
 .hero-hours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto 26px;
+}
+
+.hero-hours .hours-box {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    margin: 0 auto 26px;
+    gap: 4px;
     padding: 14px 20px;
     background: rgba(57, 211, 83, 0.16);
     border: 1px solid rgba(141, 255, 170, 0.45);
@@ -239,9 +246,73 @@ nav a:hover {
     font-size: 17px;
 }
 
+.hero-hours.is-out-of-hours .hours-box {
+    background: rgba(210, 36, 50, 0.28);
+    border-color: rgba(255, 198, 198, 0.88);
+    color: #fff5f5;
+}
+
 .hero-hours strong {
     font-size: 24px;
     letter-spacing: 0.04em;
+}
+
+.hero-hours .hours-box strong {
+    font-size: 24px;
+    letter-spacing: 0.04em;
+    color: #dff9e8;
+}
+
+.hero-hours .hours-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #b8f3c0;
+}
+
+.hero-hours .hours-closed {
+    font-size: 16px;
+    color: #eef7ef;
+    font-weight: 600;
+}
+
+.store-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: fit-content;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+}
+
+.store-status .status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.store-status.status-open {
+    background: #dffbe7;
+    color: #087733;
+    border-color: #82d69a;
+}
+
+.store-status.status-closed {
+    background: #ffe6e8;
+    color: #b32635;
+    border-color: #d76676;
+}
+
+.hero-hours .store-status {
+    margin-top: 2px;
 }
 
 .hero-actions {
@@ -361,15 +432,35 @@ nav a:hover {
     color: #4f5d58;
 }
 
+.request-invite {
+    margin: 12px 0 10px;
+    color: #49655a;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+.hours-layout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 18px 0 20px;
+}
+
 .hours-box {
     display: inline-flex;
     flex-direction: column;
     gap: 4px;
-    margin: 18px 0 20px;
     padding: 16px 18px;
     background: #f2fff4;
     border: 1px solid #cfeed3;
     border-radius: 16px;
+}
+
+.hours-box.is-out-of-hours {
+    background: #fff1f1;
+    border-color: #dc4d5d;
 }
 
 .hours-label {
@@ -380,15 +471,31 @@ nav a:hover {
     font-weight: 700;
 }
 
+.hours-box.is-out-of-hours .hours-label {
+    color: #b42635;
+}
+
 .hours-box strong {
     font-size: 28px;
-    color: #1f2f24;
+    color: #6b8e7f;
+}
+
+.hours-box.is-out-of-hours strong {
+    color: #7b1020;
 }
 
 .hours-closed {
     font-size: 16px;
     color: #4f5d58;
     font-weight: 600;
+}
+
+.hours-box.is-out-of-hours .hours-closed {
+    color: #b42635;
+}
+
+.hours-layout .store-status {
+    margin: 0;
 }
 
 .contact-info ul {
